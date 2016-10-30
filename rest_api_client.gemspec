@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "rest_api_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rest_api_client"
+  spec.name          = "rest-api-client"
   spec.version       = RestApiClient::VERSION
   spec.authors       = ["Casey Provost"]
   spec.email         = ["provost.design@gmail.com"]
