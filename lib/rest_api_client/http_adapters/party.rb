@@ -9,7 +9,6 @@ module RestApiClient
         httparty_options = {
           body: body,
           headers: @configuration.default_headers.merge(headers),
-          verify: false,
           query: @configuration.default_params.merge(query),
         }
 
