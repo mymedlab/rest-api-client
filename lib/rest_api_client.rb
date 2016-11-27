@@ -1,4 +1,9 @@
 require "rest_api_client/version"
+require "rest_api_client/resource"
+require "rest_api_client/entity_attribute"
+require "rest_api_client/entity"
+require "rest_api_client/type_caster"
+require "rest_api_client/http_adapters/party"
 
 module RestApiClient
   def self.type_cast_entity(value:, to:)
