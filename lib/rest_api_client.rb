@@ -1,4 +1,5 @@
 require "rest_api_client/version"
+require "rest_api_client/configuration"
 require "rest_api_client/resource"
 require "rest_api_client/entity_attribute"
 require "rest_api_client/entity"
