@@ -50,7 +50,7 @@ module RestApiClient
   class RateLimited < HTTPError; end
   class NotFound < HTTPError; end
   class Unavailable < HTTPError; end
-  class InformMedivo < HTTPError; end
+  class InformApiProvider < HTTPError; end
   class BadRequest < HTTPError; end
   class ServerError < HTTPError; end
   class AuthenticationFailed < HTTPError ; end
