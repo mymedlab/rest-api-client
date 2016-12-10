@@ -6,6 +6,7 @@ module RestApiClient
     config_accessor(:default_headers)
     config_accessor(:default_params)
     config_accessor(:auth)
+    config_accessor(:logger)
 
     def configure(attributes = {})
       attributes.each_pair do |key, value|

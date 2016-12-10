@@ -57,11 +57,14 @@ module RestApiClient
 
       params[:response] = @response.inspect.to_s rescue @response.body
 
+      if @configuration.logger
+        @configuration.logger.call(@response)
+      end
+
       case @response.code
       when 200..201
         @response
       when 400
-        binding.pry
         raise RestApiClient::BadRequest.new(@response, params)
       when 401
         raise RestApiClient::AuthenticationFailed.new(@response, params)
@@ -74,7 +77,7 @@ module RestApiClient
       when 503
         raise RestApiClient::RateLimited.new(@response, params)
       else
-        raise RestApiClient::InformMedivo.new(@response, params)
+        raise RestApiClient::InformApiProvider.new(@response, params)
       end
     end
 
