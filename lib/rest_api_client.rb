@@ -48,7 +48,7 @@ module RestApiClient
     end
 
     def message
-      to_s
+      to_s rescue(response || "something went wrong: #{self.class.name}")
     end
 
     def to_s
