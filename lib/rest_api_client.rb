@@ -47,8 +47,12 @@ module RestApiClient
       super(response)
     end
 
+    def message
+      to_s
+    end
+
     def to_s
-      "#{self.class.to_s} : #{response.code} #{response.body}" + (hint ? "\n#{hint}" : "")
+      "#{self.class.to_s} : #{response.code} #{response.body} params: #{params}" + (hint ? "\n#{hint}" : "")
     end
   end
 

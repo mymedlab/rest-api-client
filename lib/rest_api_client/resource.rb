@@ -67,9 +67,7 @@ module RestApiClient
       when 400
         raise RestApiClient::BadRequest.new(@response, params)
       when 401
-        exception = RestApiClient::AuthenticationFailed.new(@response, params)
-        binding.pry
-        raise exception
+        raise RestApiClient::AuthenticationFailed.new(@response, params)
       when 404
         raise RestApiClient::NotFound.new(@response, params, "Do you have sufficient privileges?")
       when 500
