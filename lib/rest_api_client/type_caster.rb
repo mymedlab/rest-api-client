@@ -63,6 +63,10 @@ module RestApiClient
         true
       elsif [false, 0, "0", "false"].include?(@value)
         false
+      elsif @value.present?
+        true
+      elsif @value.blank?
+        false
       else
         raise RestApiClient::TypeCastError.new("can't cast #{@value} to a Boolean")
       end
