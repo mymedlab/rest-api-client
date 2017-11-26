@@ -88,7 +88,12 @@ module RestApiClient
     end
 
     def response_to_entity(response)
-      attrs = response[root].symbolize_keys
+      if root.present?
+        attrs = response[root].symbolize_keys
+      else
+        attrs = response.symbolize_keys
+      end
+      
       entity_class.new(attrs)
     end
 
